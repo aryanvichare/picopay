@@ -1,36 +1,66 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Text, AppRegistry } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from "react";
+import { StyleSheet, KeyboardAvoidingView, Image } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { AuthProvider } from "./lib/auth";
 
+import OnboardingScreen from "./screens/OnboardingScreen";
+import LoginScreen from "./screens/LoginScreen";
+import SignupScreen from "./screens/SignupScreen";
+import HomeScreen from "./screens/HomeScreen";
 import ViewQR from './screens/qr';
-const Stack = createStackNavigator();
 
-function MyStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen 
-        name="ViewQR" 
-        component={ViewQR} 
-        options={{ headerShown: false}} 
-      />
-        
-      
-
-    
-       
-       
-    </Stack.Navigator>
-  );
-}
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <MyStack />
+      <SafeAreaProvider>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          keyboardVerticalOffset={Platform.OS === "ios" ? -64 : 0}
+          style={{ flex: 1 }}>
+          <AuthProvider>
+            <Stack.Navigator>
+              <Stack.Screen 
+                name="ViewQR" 
+                component={ViewQR} 
+                options={{ headerShown: false}} 
+              />
+              <Stack.Screen
+                name='Onboarding'
+                component={OnboardingScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name='Login'
+                component={LoginScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name='Signup'
+                component={SignupScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name='Home'
+                component={HomeScreen}
+                options={{ headerShown: false }}
+              />
+            </Stack.Navigator>
+          </AuthProvider>
+        </KeyboardAvoidingView>
+      </SafeAreaProvider>
     </NavigationContainer>
   );
 }
 
-AppRegistry.registerComponent('app', () => App);
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
