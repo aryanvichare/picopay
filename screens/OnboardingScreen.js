@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigation } from "@react-navigation/core";
 import Onboarding from "react-native-onboarding-swiper";
 import EaseOfAccessSVG from "../assets/ease-of-access.svg";
 import InclusiveServiceSVG from "../assets/inclusive-service.svg";
 import ImpactSVG from "../assets/impact.svg";
+import { useAuth } from "../lib/auth";
 
 const OnboardingScreen = () => {
+  const auth = useAuth();
   const navigation = useNavigation();
+
+  useEffect(() => {
+    if (!auth?.user) return;
+    navigation.navigate("Home");
+  }, [auth]);
 
   return (
     <Onboarding
