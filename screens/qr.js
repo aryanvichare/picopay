@@ -34,6 +34,21 @@ export default function ViewQR() {
             size={200}
             /></View>
             <Text style={{fontWeight:'bold', color:"#FFF", textAlign:'center', marginTop:'5%'}}>{qrType=='checkin' ? '(check in)' : '(check out)'}</Text>
+
+            <View style={{backgroundColor:"#FFF", height:'10%', width:'100%', marginTop:'52%', flexDirection:'row', justifyContent:'space-around'}}>
+                <View style={{alignSelf:'center', flexDirection:'column'}}>
+                    <Icon name="compass" type="entypo" color="#353958" size={30}></Icon>
+                    <Text style={{fontSize:10, fontWeight:'bold', color:"#353958"}}>Explore</Text>
+                </View>
+                <View style={{alignSelf:'center', flexDirection:'column'}}>
+                    <Icon name="calendar-check-o" type="font-awesome" color="#9A9A9A" size={30}></Icon>
+                    <Text style={{fontSize:10, fontWeight:'bold', color:"#9A9A9A"}}>Activity</Text>
+                </View>
+                <View style={{alignSelf:'center', flexDirection:'column'}}>
+                    <Icon name="user" type="feather" color="#9A9A9A" size={30}></Icon>
+                    <Text style={{fontSize:10, fontWeight:'bold', color:"#9A9A9A"}}>Profile</Text>
+                </View>
+            </View>
             
         </View>
     );
