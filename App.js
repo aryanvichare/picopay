@@ -4,18 +4,18 @@ import { Text, AppRegistry } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-
-import OnboardingScreen from './screens/OnboardingScreen';
+import ViewQR from './screens/qr';
 const Stack = createStackNavigator();
 
 function MyStack() {
   return (
     <Stack.Navigator>
-        <Stack.Screen 
-        name="Onboarding" 
-        component={OnboardingScreen} 
+      <Stack.Screen 
+        name="ViewQR" 
+        component={ViewQR} 
         options={{ headerShown: false}} 
       />
+        
       
 
     
