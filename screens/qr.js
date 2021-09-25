@@ -15,6 +15,7 @@ export default function ViewQR() {
   
     const [checkinType, setCheckinType] = useState('Unspecified');
     const [qrType, setQrType] = useState('checkin');
+    const [qrString, setQrString] = useState('SHELLHACKS2021TEAMZERO');
       
     
    
@@ -28,7 +29,7 @@ export default function ViewQR() {
             </View>
             <Text style={{color:"#FCC281", fontWeight:'bold', fontSize:16, textAlign:'center', marginTop:'10%'}}>{qrType=='checkin' ? 'Scan QR Code below at the Entrance':'Scan QR Code below at the Exit'}</Text>
             <View style={{backgroundColor:"#FFF", width:250, alignContent:'center', alignSelf:'center', padding:'5%', borderColor:"#FCC281", borderWidth:5, marginTop:'15%'}}><QRCode
-            value="Just some string value"
+            value={qrString}
             backgroundColor="#FFF"
             size={200}
             /></View>
