@@ -15,6 +15,9 @@ import ActiveRide from "./screens/activeRide";
 import PickSpace from "./screens/pickSpace";
 import ViewSpace from "./screens/viewSpace";
 import ActiveSpace from "./screens/activeSpace";
+import ViewQR from "./screens/qr";
+import ParkingTicket from "./screens/ParkingTicket";
+import ProfileScreen from "./screens/ProfileScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -58,6 +61,21 @@ export default function App() {
                 name="ViewQR" 
                 component={ViewQR} 
                 options={{ headerShown: false}} 
+                />
+              <Stack.Screen
+                name='Profile'
+                component={ProfileScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name='Parking Ticket'
+                component={ParkingTicket}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name='ViewQR'
+                component={ViewQR}
+                options={{ headerShown: false }}
               />
               <Stack.Screen
                 name='Onboarding'

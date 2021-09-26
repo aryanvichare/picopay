@@ -11,8 +11,8 @@ const OnboardingScreen = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
-    if (!auth?.user) return;
-    navigation.navigate("Home");
+    // if (!auth?.user) return;
+    // navigation.navigate("Home");
   }, [auth]);
 
   return (
