@@ -9,7 +9,9 @@ import OnboardingScreen from "./screens/OnboardingScreen";
 import LoginScreen from "./screens/LoginScreen";
 import SignupScreen from "./screens/SignupScreen";
 import HomeScreen from "./screens/HomeScreen";
-import ViewQR from './screens/qr';
+import ViewQR from "./screens/qr";
+import ParkingTicket from "./screens/ParkingTicket";
+import ProfileScreen from "./screens/ProfileScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,10 +25,20 @@ export default function App() {
           style={{ flex: 1 }}>
           <AuthProvider>
             <Stack.Navigator>
-              <Stack.Screen 
-                name="ViewQR" 
-                component={ViewQR} 
-                options={{ headerShown: false}} 
+              <Stack.Screen
+                name='Profile'
+                component={ProfileScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name='Parking Ticket'
+                component={ParkingTicket}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name='ViewQR'
+                component={ViewQR}
+                options={{ headerShown: false }}
               />
               <Stack.Screen
                 name='Onboarding'

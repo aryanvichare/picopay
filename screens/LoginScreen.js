@@ -63,8 +63,6 @@ const LoginScreen = () => {
 
               try {
                 await auth.signInWithEmailAndPassword(email, password);
-
-                // navigation.navigate("Home");
               } catch (e) {
                 console.error("Error", e);
               }
