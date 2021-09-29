@@ -1,5 +1,7 @@
 Demo Video: https://youtu.be/GdHXHL0xzus
+
 Polar for PicoPay: https://www.youtube.com/watch?v=gc9utHftm-8
+
 Prototype: https://www.figma.com/proto/tqFqK3ok4OwzILZrxOzur8/Work.space?page-id=1061%3A34&node-id=1130%3A1007&viewport=387%2C48%2C0.09&scaling=scale-down&starting-point-node-id=1130%3A415&show-proto-sidebar=1
 
 ![alt text](https://res.cloudinary.com/dm5iiylmn/image/upload/v1632893844/1_r2cgee.png)
